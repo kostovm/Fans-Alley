@@ -1,0 +1,148 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Typography */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Layout */
+
+body {
+    background-image: url(../src/assets/images/brick-wall-1916752_1280.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 470px;
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+    padding-top: 50px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-title h1 {
+    margin: 15px 0 30px 0;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 0px 10px orange,
+    0px 0px 20px black,
+    0px 0px 40px black,
+    0px 0px 80px black,
+    0px 0px 160px orange;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .left img{
+        top: 70px;
+    }
+
+    .right img {
+        top: 70px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .page-title h1{
+        font-size: 30px;
+    }
+
+    .not-found p:first-child {
+        font-size: 125px;
+    }
+    
+    .not-found p:last-child {
+        font-size: 50px;
+    }
+
+}
