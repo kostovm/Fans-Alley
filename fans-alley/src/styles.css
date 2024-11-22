@@ -72,6 +72,12 @@ body {
     margin: 0;
 }
 
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .content {
     flex: 1;
     padding-top: 50px;
