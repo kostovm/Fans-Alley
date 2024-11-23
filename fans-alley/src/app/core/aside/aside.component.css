@@ -1,0 +1,57 @@
+.side-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 10px;
+    /* animation: slideIn 0.4s ease forwards; */
+}
+
+.menu-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background 0.4s;
+}
+
+.menu-section:hover {
+    background: linear-gradient(90deg, #FDA33F, #FF0E49);
+}
+
+.menu-box {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.menu-section span {
+    font-size: 16px;
+    color: white;
+}
+
+/* TODO: Slide in animation */
+
+/* @keyframes slideIn {
+    from {
+        transform: translate(100%, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, -50%);
+        opacity: 1;
+    }
+} */

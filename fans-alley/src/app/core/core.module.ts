@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RotatingImageComponent } from './rotating-image/rotating-image.component';
+import { AsideComponent } from './aside/aside.component';
 
 
 
@@ -10,14 +11,16 @@ import { RotatingImageComponent } from './rotating-image/rotating-image.componen
   declarations: [
     FooterComponent,
     HeaderComponent,
-    RotatingImageComponent
+    RotatingImageComponent,
+    AsideComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AsideComponent
   ]
 })
 export class CoreModule { }

@@ -1,0 +1,51 @@
+.home-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.top {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.next {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    padding-top: 150px;
+    transition: border 0.5s;
+}
+
+.next.show {
+    border-top: 8px dashed cyan;
+    border-left: 8px dotted cyan;
+    border-right: 8px dotted cyan;
+}
+
+.pairs {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.pair {
+    display: flex;
+    position: relative;
+    gap: 400px;
+}
+
+.tips {
+    width: 400px;
+    height: auto;
+    padding: 15px;
+    background-color: black;
+    border: 3px solid cyan;
+    transition: transform ease-in 0.3s;
+    color: cyan;
+}
