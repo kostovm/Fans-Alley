@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Ignore the simple-forum and Templates folders
+/simple-forum/
+/Templates/
