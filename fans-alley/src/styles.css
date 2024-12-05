@@ -78,6 +78,11 @@ app-root {
     flex: 1;
 }
 
+app-main {
+    display: flex;
+    flex: 1;
+}
+
 .content {
     flex: 1;
     padding-top: 50px;
