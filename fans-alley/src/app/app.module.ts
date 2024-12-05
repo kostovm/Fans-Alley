@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainComponent } from './main/main.component';
 import { UserModule } from './user/user.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     CoreModule,
     UserModule,
+    ProductsModule,
     AppRoutingModule
   ],
   providers: [],
