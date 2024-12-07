@@ -3,17 +3,31 @@ import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CreateComponent } from './create/create.component';
 import { ProductsRoutingModule } from './products-routing.module';
+import { ProductListComponent } from './product-list/product-list.component';
+import { PagesComponent } from './pages/pages.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { DetailsComponent } from './details/details.component';
+import { OffersComponent } from './offers/offers.component';
 
 
 
 @NgModule({
   declarations: [
     GalleryComponent,
-    CreateComponent
+    CreateComponent,
+    ProductListComponent,
+    PagesComponent,
+    ProductInfoComponent,
+    DetailsComponent,
+    OffersComponent
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule
+  ],
+  exports: [
+    ProductListComponent,
+    PagesComponent
   ]
 })
 export class ProductsModule { }

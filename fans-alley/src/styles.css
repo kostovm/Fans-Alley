@@ -116,44 +116,8 @@ app-main {
 
 @media (max-width: 900px) {
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .left img{
-        top: 70px;
-    }
-
-    .right img {
-        top: 70px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 20px;
-    }
-
     .page-title h1{
         font-size: 30px;
-    }
-
-    .not-found p:first-child {
-        font-size: 125px;
-    }
-    
-    .not-found p:last-child {
-        font-size: 50px;
     }
 
 }

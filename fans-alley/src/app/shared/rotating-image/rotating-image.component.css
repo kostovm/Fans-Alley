@@ -30,3 +30,15 @@
         box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.9);
     }
 }
+
+@media (max-width: 900px) {
+
+    .left img{
+        top: 70px;
+    }
+
+    .right img {
+        top: 70px;
+    }
+
+}

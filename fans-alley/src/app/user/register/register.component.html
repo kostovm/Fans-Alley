@@ -6,40 +6,28 @@
                 <p>REGISTER</p>
             </div>
           
-          <!-- Sliding Toggle Button -->
-          <label class="toggle-switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-          </label>
-          
           <!-- Text Input -->
-          <label for="text-input">Text Input:</label>
-          <input type="text" id="text-input" name="text-input" placeholder="Enter text">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Name">
+
+          <label for="phone-number">Phone number:</label>
+          <input type="text" id="phone-number" name="phone-number" placeholder="Phone number">
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" placeholder="Email">
           
           <!-- Text Area -->
-          <label for="text-area">Text Area:</label>
-          <textarea id="text-area" name="text-area" placeholder="Enter longer text"></textarea>
-          
-          <!-- Number Input -->
-          <label for="number-input">Number Input:</label>
-          <input type="number" id="number-input" name="number-input">
+          <label for="about">About you:</label>
+          <textarea id="about" name="about" placeholder="Who are you?"></textarea>
           
           <!-- File Upload Button -->
-          <label for="file-upload" class="upload-button">Upload Picture</label>
-          <input type="file" id="file-upload" name="file-upload" accept="image/*" onchange="previewImage(event)">
+          <label for="file-upload" class="upload-button">Upload Profile Picture</label>
+          <input type="file" id="file-upload" name="file-upload" accept="image/*">
           
           <!-- Image Preview Area -->
           <div class="image-preview" id="image-preview">
             <p>No image selected</p>
           </div>
-          
-          <!-- Drop Down Menu -->
-          <label for="dropdown">Choose an option:</label>
-          <select id="dropdown" name="dropdown">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
       
         </form>
       </section>

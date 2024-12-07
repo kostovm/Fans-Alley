@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing.module';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { ProductsModule } from '../products/products.module';
 
 
 
@@ -12,10 +14,12 @@ import { UserRoutingModule } from './user-routing.module';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
+    UserInfoComponent,
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    ProductsModule
   ],
   exports: [
     UserRoutingModule

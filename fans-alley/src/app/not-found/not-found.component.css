@@ -22,3 +22,14 @@
     0px 0px 30px white;
 }
 
+@media (max-width: 900px) {
+
+    .not-found p:first-child {
+        font-size: 125px;
+    }
+    
+    .not-found p:last-child {
+        font-size: 50px;
+    }
+
+}

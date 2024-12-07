@@ -35,3 +35,27 @@ nav ul li a:hover {
     0 0 15px #ff3300,
     0 0 20px #ff0000;
 }
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+}

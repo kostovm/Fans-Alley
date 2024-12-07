@@ -1,0 +1,109 @@
+.product-info-page {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.price-tag {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    background-color: #eaee08;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+    padding: 8px 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    z-index: 10;
+    transition: box-shadow font-size 0.3s;
+}
+
+.price-tag:hover {
+box-shadow: none;
+font-size: 48px;
+cursor: default;
+}
+
+.product-info-page img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.make-offer-on-page {
+    display: flex;
+    gap: 15px;
+}
+
+.offer-button-on-page, .buy-now-button-on-page, .more-from-this-artist-button, .edit-button, .remove-button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.offer-button-on-page {
+    background-color: #0275d8;
+}
+
+.buy-now-button-on-page {
+    background-color: #5cb85c;
+}
+
+.offer-button-on-page:hover {
+    background-color: #025aa5;
+}
+
+.buy-now-button-on-page:hover {
+    background-color: #4cae4c;
+}
+
+.more-from-this-artist-button {
+    background-color: #FDA33F;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.more-from-this-artist-button:hover {
+    background-color: #ff8b00;
+}
+
+.edit-button {
+    background-color: #0275d8;
+    margin-top: 20px;
+}
+
+.remove-button {
+    background-color: #d9534f;
+    margin-top: 10px;
+}
+
+.edit-button:hover {
+    background-color: #025aa5;
+}
+
+.remove-button:hover {
+    background-color: #c9302c;
+}
+
+.product-description {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #666;
+    text-align: left;
+}
