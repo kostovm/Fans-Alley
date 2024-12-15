@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RotatingImageComponent } from './rotating-image/rotating-image.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
 @NgModule({
-  declarations: [RotatingImageComponent],
+  declarations: [RotatingImageComponent, ErrorComponent],
   imports: [
     CommonModule
   ],
   exports: [
-    RotatingImageComponent
+    RotatingImageComponent,
+    ErrorComponent
   ]
 })
 export class SharedModule { }
