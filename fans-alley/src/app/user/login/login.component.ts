@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements AfterViewInit {
 
   isVisible: boolean = false;
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.isVisible = true;
-    }, 1)
+  ngAfterViewInit(): void {
+    this.isVisible = true;
   }
+
 }
