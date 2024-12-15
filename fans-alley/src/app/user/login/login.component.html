@@ -1,40 +1,21 @@
-<section class="forms container">
-    <section class="form-container">
-        <form class="styled-form">
+<section class="forms container" [class.visible]="isVisible">
+  <section class="form-container">
+    <form class="styled-form">
 
-            <div class="form-title">
-                <p>LOGIN</p>
-            </div>
-          
-          <!-- Text Input -->
-          <label for="email">Text Input:</label>
-          <input type="email" id="email" name="email" placeholder="Registered email">
-          
-          <!-- Text Area -->
-          <label for="text-area">Text Area:</label>
-          <textarea id="text-area" name="text-area" placeholder="Enter longer text"></textarea>
-          
-          <!-- Number Input -->
-          <label for="number-input">Number Input:</label>
-          <input type="number" id="number-input" name="number-input">
-          
-          <!-- File Upload Button -->
-          <label for="file-upload" class="upload-button">Upload Picture</label>
-          <input type="file" id="file-upload" name="file-upload" accept="image/*" onchange="previewImage(event)">
-          
-          <!-- Image Preview Area -->
-          <div class="image-preview" id="image-preview">
-            <p>No image selected</p>
-          </div>
-          
-          <!-- Drop Down Menu -->
-          <label for="dropdown">Choose an option:</label>
-          <select id="dropdown" name="dropdown">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-      
-        </form>
-      </section>
+      <div class="form-title">
+        <p>LOGIN</p>
+      </div>
+
+      <!-- Text Input -->
+      <label for="email">Text Input:</label>
+      <input type="email" id="email" name="email" placeholder="Registered email">
+
+      <!-- Password Input -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <a routerLink="/register" class="not-registered">Not registered yet? Do it!</a>
+
+    </form>
+  </section>
 </section>
