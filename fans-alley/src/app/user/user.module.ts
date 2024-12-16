@@ -7,6 +7,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ProductsModule } from '../products/products.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     UserRoutingModule,
     ProductsModule,
     SharedModule,
+    FormsModule
   ],
   exports: [
     UserRoutingModule

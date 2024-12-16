@@ -87,6 +87,7 @@ input:checked + .slider::before {
 input[type="text"],
 textarea,
 input[type="number"],
+input[type="email"],
 select {
     width: 100%;
     padding: 10px;
@@ -99,6 +100,7 @@ select {
 input[type="text"]:focus,
 textarea:focus,
 input[type="number"]:focus,
+input[type="email"]:focus,
 select:focus {
     border-color: #4CAF50;
     outline: none;

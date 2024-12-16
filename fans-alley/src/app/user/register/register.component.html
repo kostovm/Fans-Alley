@@ -1,6 +1,6 @@
 <section class="forms container">
     <section class="form-container">
-        <form class="styled-form">
+        <form class="styled-form" #form="ngForm" (ngSubmit)="register(form)">
 
             <div class="form-title">
                 <p>REGISTER</p>
@@ -8,17 +8,94 @@
           
           <!-- Text Input -->
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Name">
+          <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          ngModel
+          #inputName="ngModel"
+          required
+          minlength="5"
+          pattern="^([A-Z][a-z]*)(\s[A-Z][a-z]*)*$"
+          >
+
+          <ng-container *ngIf="inputName.touched && inputName.errors">
+            <app-error *ngIf="inputName.errors['required']" [message]="'Name is required'"/>
+            <app-error *ngIf="inputName.errors['minlength']" [message]="'The name must be at least 5 characters'"/>
+            <app-error *ngIf="inputName.errors['pattern']" [message]="'This is invalid personal name'"/>
+          </ng-container>
 
           <label for="phone-number">Phone number:</label>
-          <input type="text" id="phone-number" name="phone-number" placeholder="Phone number">
+          <input 
+          type="text" 
+          id="phone-number" 
+          name="phone" 
+          placeholder="Phone number"
+          ngModel
+          #inputPhone="ngModel"
+          maxlength="10"
+          minlength="10"
+          pattern="[0-9]*"
+          required
+          >
+
+          <ng-container *ngIf="inputPhone.touched && inputPhone.errors">
+            <app-error *ngIf="inputPhone.errors['required']" [message]="'Please enter your phone number for contacts'"/>
+            <app-error *ngIf="inputPhone.errors?.['maxlength'] || inputPhone.errors?.['minlength']" [message]="'The number must be 10 digits'"/>
+            <app-error *ngIf="inputPhone.errors['pattern']" [message]="'The number is invalid'"/>
+          </ng-container>
 
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="Email">
+          <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Email"
+          ngModel
+          #inputEmail="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
+          >
+
+          <ng-container *ngIf="inputEmail.touched && inputEmail.errors">
+            <app-error *ngIf="inputEmail.errors['required']" [message]="'Email is required'"/>
+            <app-error *ngIf="inputEmail.errors['pattern']" [message]="'invalid Email'"/>
+          </ng-container>
+
+          <label for="username">UserName:</label>
+          <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          placeholder="The name other users will see"
+          ngModel
+          #inputUserName="ngModel"
+          maxlength="15"
+          minlength="3"
+          required
+          >
+
+          <ng-container *ngIf="inputUserName.touched && inputUserName.errors">
+            <app-error *ngIf="inputUserName.errors['required']" [message]="'UserName is required'"/>
+            <app-error *ngIf="inputUserName.errors['minlength']" [message]="'UserName is too short'"/>
+            <app-error *ngIf="inputUserName.errors['maxlength']" [message]="'UserName is too long'"/>
+          </ng-container>
           
           <!-- Text Area -->
           <label for="about">About you:</label>
-          <textarea id="about" name="about" placeholder="Who are you?"></textarea>
+          <textarea 
+          id="about" 
+          name="about" 
+          placeholder="Who are you?"
+          ngModel
+          #inputAbout="ngModel"
+          maxlength="142"
+          ></textarea>
+
+          <ng-container *ngIf="inputAbout.touched && inputAbout.errors">
+            <app-error *ngIf="inputAbout.errors['maxlength']" [message]="'The text about you should be up to 142 characters'"/>
+          </ng-container>
           
           <!-- File Upload Button -->
           <label for="file-upload" class="upload-button">Upload Profile Picture</label>
@@ -28,6 +105,8 @@
           <div class="image-preview" id="image-preview">
             <p>No image selected</p>
           </div>
+
+          <app-submit-btn [text]="'Submit and Register'" [disabled]="!form.valid"/>
       
         </form>
       </section>
