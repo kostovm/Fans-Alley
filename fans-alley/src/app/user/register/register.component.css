@@ -160,3 +160,20 @@ select {
     background-repeat: no-repeat;
     padding-right: 30px;
 }
+
+#password {
+    border: 2px solid #4CAF50;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#rePassword {
+    border: 2px solid #FF9800;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#password:focus, #rePassword:focus {
+    border-color: #2196F3;
+    outline: none;
+}
