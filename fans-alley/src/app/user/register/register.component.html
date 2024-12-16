@@ -106,6 +106,38 @@
             <p>No image selected</p>
           </div>
 
+          <label for="password">Password:</label>
+          <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Don't forget it!"
+          ngModel
+          #inputPassword="ngModel"
+          minlength="3"
+          required
+          >
+
+          <ng-container *ngIf="inputPassword.touched && inputPassword.errors">
+            <app-error *ngIf="inputPassword.errors['required']" [message]="'Password is required'"/>
+            <app-error *ngIf="inputPassword.errors['minlength']" [message]="'Password should be at least 3 characters long'"/>
+          </ng-container>
+
+          <label for="rePassword">Repeat password:</label>
+          <input 
+          type="password" 
+          id="rePassword" 
+          name="rePassword" 
+          placeholder="Remember it?"
+          ngModel
+          #inputRePassword="ngModel"
+          [pattern]="inputPassword.value"
+          >
+
+          <ng-container *ngIf="inputRePassword.touched && inputPassword.errors">
+            <app-error [message]="'Passwords do not match'"/>
+          </ng-container>
+
           <app-submit-btn [text]="'Submit and Register'" [disabled]="!form.valid"/>
       
         </form>

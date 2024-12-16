@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,15 @@ export class LoginComponent implements OnInit {
     setTimeout(() =>{
       this.isVisible = true;
     })
+  }
+
+  login(form: NgForm){
+    if(form.invalid){
+      return;
+    }
+
+    const {email, password} = form.value;
+    console.log(email, password)
   }
 
 }
