@@ -132,4 +132,21 @@ section.make-offer{
     background-color: #4cae4c;
 }
 
-/* To be moved */
+.image-section {
+    position: relative;
+}
+
+.image-section p{
+    border: 5px solid red;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 70px;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-weight: bold;
+}

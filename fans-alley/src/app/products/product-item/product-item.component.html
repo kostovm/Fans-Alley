@@ -3,10 +3,13 @@
     <p class="enough">There are <span class="number-offers">3</span> offers for this product</p>
     <section class="product-info">
         <div class="card-top-border"></div>
-        <p class="product-title">Card template</p>
-        <p class="product-type">Type: Finished!</p>
+        <p class="product-title">{{product.productName}}</p>
+        <p class="product-type">Type: {{product.category}}</p>
     </section>
-    <img src="../../../assets/images/s-l1200.jpg" alt="" class="hover-image">
+    <div class="image-section">
+        <p>SOLD</p>
+        <img src={{product.imageUrl}} alt="" class="hover-image">
+    </div>
     <p class="not-enough">Someone has offered more than $3</p>
     <p class="enough">You have the best offer!</p>
     <a href="#" class="more-info">More info about the product and the artist</a>

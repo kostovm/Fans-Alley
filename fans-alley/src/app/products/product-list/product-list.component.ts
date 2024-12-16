@@ -8,11 +8,14 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ProductListComponent implements OnInit{
 
+  allProducts: any = [];
+
   constructor(private api: ApiService){}
 
   ngOnInit(): void {
-    this.api.getProducts().subscribe((product)=> {
-      console.log(product)
+    this.api.getProducts().subscribe((products)=> {
+      this.allProducts = products;
+      console.log(this.allProducts)
     })
     
   }

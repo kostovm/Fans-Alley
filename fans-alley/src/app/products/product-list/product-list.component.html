@@ -1,8 +1,5 @@
 <section class="container products">
-<app-product-item />
-<app-product-item />
-<app-product-item />
-<app-product-item />
-<app-product-item />
-<app-product-item />
+<div *ngFor="let product of allProducts">
+    <app-product-item [product]="product"/>
+</div>
 </section>
