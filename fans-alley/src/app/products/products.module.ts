@@ -8,6 +8,7 @@ import { PagesComponent } from './pages/pages.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { DetailsComponent } from './details/details.component';
 import { OffersComponent } from './offers/offers.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 
 
@@ -19,7 +20,8 @@ import { OffersComponent } from './offers/offers.component';
     PagesComponent,
     ProductInfoComponent,
     DetailsComponent,
-    OffersComponent
+    OffersComponent,
+    ProductItemComponent
   ],
   imports: [
     CommonModule,
