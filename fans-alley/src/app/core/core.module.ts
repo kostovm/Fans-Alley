@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { AsideComponent } from './aside/aside.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { UserModule } from '../user/user.module';
 
 
 
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
+    UserModule,
     RouterModule
   ],
   exports: [
