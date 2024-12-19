@@ -13,6 +13,10 @@ export class UserService {
 
   constructor(private http: HttpClient, private sharedService: SharedService, private router: Router){}
 
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem('accessToken');
+  }
+
   login(email: string, password:string){
     const {apiUrl} = environment;
 

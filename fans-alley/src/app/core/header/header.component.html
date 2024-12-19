@@ -10,19 +10,19 @@
             <li>
                 <a routerLink="/products" routerLinkActive="selected-page">The Display</a>
             </li>
-            <li>
-                <a routerLink="/login" routerLinkActive="selected-page">Login &#8612;</a>
-            </li>
-            <li>
+            <li *ngIf="!userService.isLoggedIn()">
                 <a routerLink="/register" routerLinkActive="selected-page">Register</a>
             </li>
-            <li>
+            <li *ngIf="!userService.isLoggedIn()">
+                <a routerLink="/login" routerLinkActive="selected-page">Login &#8612;</a>
+            </li>
+            <li *ngIf="userService.isLoggedIn()">
                 <a routerLink="/create" routerLinkActive="selected-page">Sell your art!</a>
             </li>
-            <li>
-                <a routerLink="/profile" routerLinkActive="selected-page">User profile</a>
+            <li *ngIf="userService.isLoggedIn()">
+                <a routerLink="/your-profile" routerLinkActive="selected-page">Your profile</a>
             </li>
-            <li>
+            <li *ngIf="userService.isLoggedIn()">
                 <a (click)="logout()" class="logout-link">Logout &#8614;</a>
             </li>
         </ul>
