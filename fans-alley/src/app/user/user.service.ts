@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserForAuth } from '../types/user';
+import { UserForAuth, UserInfo } from '../types/user';
 import { environment } from 'src/environments/environment.development';
 import { SharedService } from '../shared.service';
 import { Router } from '@angular/router';
@@ -31,6 +31,21 @@ export class UserService {
     },
     (error) => console.error('Error:', error)
   );
+  }
+
+  register(name: string, phoneNumber: string, email: string, username: string, about: string, password: string, imageUrl: string){
+    const {apiUrl} = environment;
+
+
+    this.http
+    .post<UserInfo>(`${apiUrl}/users/register`, {name, phoneNumber, email, username, about, password, imageUrl})
+    .subscribe(
+      (response) => {
+        this.login(email, password);
+        this.router.navigate(['/products']);
+      },
+      (error) => console.log(error)
+    )
   }
 
   logout(){
