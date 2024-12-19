@@ -1,22 +1,26 @@
 <div class="card">
-    <p class="not-enough">There are <span class="number-offers">0</span> offers for this product</p>
-    <p class="enough">There are <span class="number-offers">3</span> offers for this product</p>
+    <section class="offer-section" *ngIf="!product.sold && isOwner">
+        <p class="not-enough">There are <span class="number-offers">0</span> offers for this product</p>
+        <p class="enough">There are <span class="number-offers">3</span> offers for this product</p>
+    </section>
     <section class="product-info">
         <div class="card-top-border"></div>
         <p class="product-title">{{product.productName}}</p>
         <p class="product-type">Type: {{product.category}}</p>
     </section>
     <div class="image-section">
-        <p>SOLD</p>
+        <p *ngIf="product.sold">SOLD</p>
         <img src={{product.imageUrl}} alt="" class="hover-image">
     </div>
-    <p class="not-enough">Someone has offered more than $3</p>
-    <p class="enough">You have the best offer!</p>
-    <a href="#" class="more-info">More info about the product and the artist</a>
-    <a href="#" class="more-info">See OFFERS, EDIT or DELETE your product</a>
-    <input type="number" class="offer" value="4">
-    <section class="make-offer">
+    <section class="isEnough" *ngIf="!isOwner && userService.isLoggedIn()">
+        <p class="not-enough">Someone has offered more than $3</p>
+        <p class="enough">You have the best offer!</p>
+    </section>
+    <a href="#" class="more-info" *ngIf="!isOwner">More info about the product and the artist</a>
+    <a href="#" class="more-info" *ngIf="isOwner">See OFFERS, EDIT or DELETE your product</a>
+    <input type="number" class="offer" value="4" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
+    <section class="make-offer" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
         <a href="#" class="offer-button">Make offer for $4</a>
-        <a href="#" class="buy-now-button">Buy NOW for $15</a>
+        <a href="#" class="buy-now-button">Buy NOW for ${{product.buyPrice}}</a>
     </section>
 </div>
