@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     UserRoutingModule,
     ProductsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     UserRoutingModule

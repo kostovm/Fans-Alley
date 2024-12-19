@@ -1323,7 +1323,9 @@
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "peter@abv.bg",
                 username: "Peter",
+                name: 'Peter Keychain',
                 phoneNumber: "0888777666",
+                about: 'Very nice guy. I have three daughters and a cat. I like to draw, paint and play with clay. Hope you like my art!',
                 imageUrl: "https://parish.rcdow.org.uk/hatfieldsouth/wp-content/uploads/sites/209/2013/10/hatfield-south-st-peter.jpg",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },

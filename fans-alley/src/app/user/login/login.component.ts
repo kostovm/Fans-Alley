@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   isVisible: boolean = false;
+
+  constructor(private userService: UserService){}
 
   ngOnInit(): void {
     setTimeout(() =>{
@@ -22,7 +25,8 @@ export class LoginComponent implements OnInit {
     }
 
     const {email, password} = form.value;
-    console.log(email, password)
+    console.log('button works')
+    this.userService.login(email, password)
   }
 
 }

@@ -11,8 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getProducts(){
-    console.log('getProducts initiated')
     const {apiUrl} = environment;
-    return this.http.get(`${apiUrl}/products`)
+    return this.http.get(`${apiUrl}/data/products`)
   }
 }
