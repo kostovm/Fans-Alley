@@ -12,6 +12,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { SharedModule } from "../shared/shared.module";
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 
@@ -25,7 +26,8 @@ import { EditComponent } from './edit/edit.component';
     DetailsComponent,
     OffersComponent,
     ProductItemComponent,
-    EditComponent
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     CommonModule,

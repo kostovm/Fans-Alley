@@ -9,5 +9,5 @@
     <a href="#" class="more-from-this-artist-button">More from this atrist</a>
     <p class="product-description">{{product.description}}</p>
     <a [routerLink]="'/products/' + product._id + '/edit'" class="edit-button">Edit</a>
-    <a href="#" class="remove-button">Delete</a>
+    <a [routerLink]="'/products/' + product._id + '/delete'" class="remove-button">Delete</a>
 </section>
