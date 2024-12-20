@@ -1,8 +1,8 @@
 
     <section class="page-title">
-        <h1>Handmade Hogwarts mug</h1>
+        <h1>{{product?.productName}}</h1>
     </section>
 
-    <app-details />
+    <app-details *ngIf="product" [product]="product"/>
 
-    <app-offers />
+    <app-offers *ngIf="isOwner"/>

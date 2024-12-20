@@ -2,7 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { NewProduct } from './types/product';
+import { NewProduct, Product } from './types/product';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -10,12 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
 
+  apiUrl:string = environment.apiUrl
+
   constructor(private http: HttpClient, private router: Router) { }
 
-  addProduct(productName:string, description:string, category:string, price:number, sold:boolean, imageUrl:string){
-    const {apiUrl} = environment;
+  addProduct(productName:string, description:string, category:string, buyPrice:number, sold:boolean, imageUrl:string){
 
-    this.http.post<NewProduct>(`${apiUrl}/data/products`, {productName, description, category, price, sold, imageUrl})
+    this.http.post<NewProduct>(`${this.apiUrl}/data/products`, {productName, description, category, buyPrice, sold, imageUrl})
     .subscribe(
       (response) => {
         this.router.navigate(['/products']);
@@ -23,8 +24,17 @@ export class ApiService {
       (error) => console.log(error));
   }
 
+  editProduct(){
+    
+  }
+
   getProducts(){
-    const {apiUrl} = environment;
-    return this.http.get(`${apiUrl}/data/products`)
+    return this.http.get(`${this.apiUrl}/data/products`)
+  }
+
+  getSingleProduct(productId: string){
+    
+    return this.http.get<Product>(`${this.apiUrl}/data/products/${productId}`)
+
   }
 }

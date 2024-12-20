@@ -10,14 +10,14 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class ProductItemComponent implements OnInit, OnDestroy{
 @Input() product = {
-  "_ownerId":"35c62d76-8152-4626-8712-eeb96381bea8",
-  "productName":"Памперси",
-  "category":"Консумативи",
-  "description":"Почтти пълен пакет памперси",
-  "buyPrice": 15,
+  "_ownerId":"",
+  "productName":"",
+  "category":"",
+  "description":"",
+  "buyPrice": 0,
   "sold": false,
-  "imageUrl":"https://m.media-amazon.com/images/I/71UB0oZ+ccL._AC_UF1000,1000_QL80_.jpg",
-  "_id":"3564027f-adcd-4425-b2c0-1253d2386c0c"}
+  "imageUrl":"",
+  "_id":""}
 
   private subscription!: Subscription;
   isOwner: boolean = false;

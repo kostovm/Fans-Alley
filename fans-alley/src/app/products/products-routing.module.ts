@@ -9,8 +9,8 @@ import { EditComponent } from "./edit/edit.component";
 const routes: Routes = [
 {path: 'products', component: GalleryComponent},
 {path: 'create', component: CreateComponent, canActivate: [authGuard]},
-{path: 'details', component: ProductInfoComponent},
-{path: 'profile/edit', component: EditComponent, canActivate: [authGuard]}
+{path: 'products/:id/details', component: ProductInfoComponent},
+{path: 'products/:id/edit', component: EditComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({

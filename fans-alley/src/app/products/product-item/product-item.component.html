@@ -16,8 +16,8 @@
         <p class="not-enough">Someone has offered more than $3</p>
         <p class="enough">You have the best offer!</p>
     </section>
-    <a href="#" class="more-info" *ngIf="!isOwner">More info about the product and the artist</a>
-    <a href="#" class="more-info" *ngIf="isOwner">See OFFERS, EDIT or DELETE your product</a>
+    <a [routerLink]="'/products/' + product._id + '/details'" class="more-info" *ngIf="!isOwner">More info about the product and the artist</a>
+    <a [routerLink]="'/products/' + product._id + '/details'" class="more-info" *ngIf="isOwner">See OFFERS, EDIT or DELETE your product</a>
     <input type="number" class="offer" value="4" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
     <section class="make-offer" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
         <a href="#" class="offer-button">Make offer for $4</a>
