@@ -35,12 +35,21 @@ export class ApiService {
   }
 
   getProducts(){
-    return this.http.get(`${this.apiUrl}/data/products`)
+    return this.http.get(`${this.apiUrl}/data/products`);
   }
 
   getSingleProduct(productId: string){
     
-    return this.http.get<Product>(`${this.apiUrl}/data/products/${productId}`)
+    return this.http.get<Product>(`${this.apiUrl}/data/products/${productId}`);
 
+  }
+
+  deleteProduct(productId: string){
+    return this.http.delete(`${this.apiUrl}/data/products/${productId}`).subscribe(
+      (response) => {
+        this.router.navigate(['/products']);
+      },
+      (error) => console.log(error)
+    )
   }
 }

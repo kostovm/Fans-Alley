@@ -25,7 +25,6 @@ export class UserService {
   .subscribe(
     (response) => {
       if(response?.accessToken){
-        console.log(response._id);
         localStorage.setItem('accessToken', response.accessToken);
         this.sharedService.setUserInfo(response);
       }

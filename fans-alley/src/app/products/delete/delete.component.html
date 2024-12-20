@@ -1,6 +1,8 @@
-<section class="delete">
-    <img src="https://thumbs.dreamstime.com/b/button-delete-7847471.jpg" alt="">
-    <p class="warning">Are you sure you want to delete <span>Product name</span>? There is no turning back!</p>
-    <button class="confirm">Yes, remove it</button>
-    <button class="deny">No, DO NOT delete it</button>
-</section>
+<div class="outer">
+    <section class="delete">
+        <img src={{product?.imageUrl}} alt="">
+        <p class="warning">Are you sure you want to delete <span>{{product?.productName}}</span>? There is no turning back!</p>
+        <button (click)="remove()" class="confirm">Yes, remove it</button>
+        <button (click)="goBack()" class="deny">No, DO NOT delete it</button>
+    </section>
+</div>
