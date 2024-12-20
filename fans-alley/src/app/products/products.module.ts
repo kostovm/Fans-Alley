@@ -9,6 +9,9 @@ import { ProductInfoComponent } from './product-info/product-info.component';
 import { DetailsComponent } from './details/details.component';
 import { OffersComponent } from './offers/offers.component';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { SharedModule } from "../shared/shared.module";
+import { FormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -21,12 +24,15 @@ import { ProductItemComponent } from './product-item/product-item.component';
     ProductInfoComponent,
     DetailsComponent,
     OffersComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
-  ],
+    FormsModule,
+    ProductsRoutingModule,
+    SharedModule
+],
   exports: [
     ProductListComponent,
     PagesComponent

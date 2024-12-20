@@ -17,7 +17,7 @@ export class UserService {
     return !!localStorage.getItem('accessToken');
   }
 
-  login(email: string, password:string){
+  login(email: string, password:string): void{
     const {apiUrl} = environment;
 
     this.http
@@ -25,6 +25,7 @@ export class UserService {
   .subscribe(
     (response) => {
       if(response?.accessToken){
+        console.log(response._id);
         localStorage.setItem('accessToken', response.accessToken);
         this.sharedService.setUserInfo(response);
       }
@@ -33,7 +34,7 @@ export class UserService {
   );
   }
 
-  register(name: string, phoneNumber: string, email: string, username: string, about: string, password: string, imageUrl: string){
+  register(name: string, phoneNumber: string, email: string, username: string, about: string, password: string, imageUrl: string): void{
     const {apiUrl} = environment;
 
 
@@ -48,14 +49,10 @@ export class UserService {
     )
   }
 
-  logout(){
+  logout(): void{
     localStorage.removeItem('accessToken');
     this.sharedService.clearUserInfo();
     this.router.navigate(['/home']);
-  }
-
-  getProfile(){
-    
   }
 
 }

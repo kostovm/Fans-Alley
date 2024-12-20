@@ -98,20 +98,20 @@
           </ng-container>
           
           <!-- File Upload Button -->
-<label for="file-upload" class="upload-button">Upload Profile Picture</label>
-<input
-  type="file"
-  id="file-upload"
-  name="file-upload"
-  accept="image/*"
-  (change)="onFileSelected($event)"
->
+                <label for="file-upload" class="upload-button">Upload Profile Picture</label>
+                <input
+                  type="file"
+                  id="file-upload"
+                  name="file-upload"
+                  accept="image/*"
+                  (change)="onFileSelected($event)"
+                >
 
-<!-- Image Preview Area -->
-<div class="image-preview" id="image-preview">
-  <img *ngIf="previewUrl" [src]="previewUrl" alt="Image preview" style="max-width: 100px; max-height: 100px;" />
-  <p *ngIf="!previewUrl">No image selected</p>
-</div>
+                <!-- Image Preview Area -->
+                <div class="image-preview" id="image-preview">
+                  <img *ngIf="previewUrl" [src]="previewUrl" alt="Image preview" style="max-width: 100px; max-height: 100px;" />
+                  <p *ngIf="!previewUrl">No image selected</p>
+                </div>
 
           <label for="password">Password:</label>
           <input 

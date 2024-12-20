@@ -1,45 +1,96 @@
 <section class="forms container">
     <section class="form-container">
-        <form class="styled-form">
+        <form class="styled-form" #form="ngForm" (ngSubmit)="create(form)">
 
             <div class="form-title">
                 <p>ADD your PRODUCT</p>
             </div>
           
-          <!-- Sliding Toggle Button -->
-          <label class="toggle-switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-          </label>
-          
-          <!-- Text Input -->
-          <label for="text-input">Text Input:</label>
-          <input type="text" id="text-input" name="text-input" placeholder="Enter text">
-          
-          <!-- Text Area -->
-          <label for="text-area">Text Area:</label>
-          <textarea id="text-area" name="text-area" placeholder="Enter longer text"></textarea>
-          
-          <!-- Number Input -->
-          <label for="number-input">Number Input:</label>
-          <input type="number" id="number-input" name="number-input">
+
+            <label for="productName">Product name:</label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              placeholder="Enter product name"
+              ngModel
+              required
+              maxlength="20"
+              #productName="ngModel"
+            />
+            <ng-container *ngIf="productName.touched && productName.errors">
+              <app-error *ngIf="productName.errors['required']" [message]="'Product name is required'"/>
+              <app-error *ngIf="productName.errors['maxlength']" [message]="'Name is too long'"/>
+            </ng-container>
+      
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe your product"
+              ngModel
+              required
+              minlength="5"
+              #description="ngModel"
+            ></textarea>
+            <ng-container *ngIf="description.touched && description.errors">
+              <app-error *ngIf="description.errors['required']" [message]="'Description is required'"/>
+              <app-error *ngIf="description.errors['minlength']" [message]="'description is too short'"/>
+            </ng-container>
+      
+            <label for="category">Choose category:</label>
+            <select
+              id="category"
+              name="category"
+              ngModel
+              required
+              #category="ngModel"
+            >
+              <option value="" disabled>Choose a category</option>
+              <option value="Paintings and Illustrations">Paintings and Illustrations</option>
+              <option value="Pottery">Pottery</option>
+              <option value="Textile Arts">Textile Arts</option>
+              <option value="Wood Carving and Glass Art">Wood Carving and Glass Art</option>
+              <option value="Jewelry and Decorations">Jewelry and Decorations</option>
+            </select>
+
+            <ng-container *ngIf="category.touched && category.errors">
+              <app-error *ngIf="category.errors['required']" [message]="'Category is required'"/>
+            </ng-container>
+      
+            <label for="price">Instant buy price:</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Enter price"
+              ngModel
+              required
+              min="1"
+              #price="ngModel"
+            />
+            <ng-container *ngIf="price.touched && price.errors">
+              <app-error *ngIf="price.errors['required']" [message]="'Price is required'"/>
+              <app-error *ngIf="price.errors['min']" [message]="'Price should be at least $1'"/>
+            </ng-container>
           
           <!-- File Upload Button -->
           <label for="file-upload" class="upload-button">Upload Picture</label>
-          <input type="file" id="file-upload" name="file-upload" accept="image/*" onchange="previewImage(event)">
+          <input
+            type="file"
+            id="file-upload"
+            name="file-upload"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+            >
           
           <!-- Image Preview Area -->
           <div class="image-preview" id="image-preview">
-            <p>No image selected</p>
+            <img *ngIf="previewUrl" [src]="previewUrl" alt="Image preview" style="max-width: 100px; max-height: 100px;" />
+            <p *ngIf="!previewUrl">No image selected</p>
           </div>
-          
-          <!-- Drop Down Menu -->
-          <label for="dropdown">Choose an option:</label>
-          <select id="dropdown" name="dropdown">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
+
+          <app-submit-btn [text]="'Create your product'" [disabled]="!form.valid"/>
       
         </form>
       </section>

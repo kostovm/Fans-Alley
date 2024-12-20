@@ -9,7 +9,7 @@ import { loggedInGuard } from "../logged-in.guard";
 const routes: Routes = [
  {path: 'login', component: LoginComponent, canActivate: [loggedInGuard]},
  {path: 'register', component: RegisterComponent, canActivate: [loggedInGuard]},
- {path: 'your-profile', component: ProfileComponent, canActivate: [authGuard]}
+ {path: 'your-profile', component: ProfileComponent, canActivate: [authGuard]},
 ];
 
 @NgModule({
