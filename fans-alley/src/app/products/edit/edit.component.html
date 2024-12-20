@@ -13,9 +13,9 @@
               id="productName"
               name="productName"
               placeholder="Enter product name"
-              ngModel
+              [ngModel]="product?.productName"
               required
-              maxlength="20"
+              maxlength="50"
               #productName="ngModel"
             />
             <ng-container *ngIf="productName.touched && productName.errors">
@@ -28,7 +28,7 @@
               id="description"
               name="description"
               placeholder="Describe your product"
-              ngModel
+              [ngModel]="product?.description"
               required
               minlength="5"
               #description="ngModel"
@@ -42,16 +42,16 @@
             <input
               type="number"
               id="price"
-              name="price"
+              name="buyPrice"
               placeholder="Enter price"
-              ngModel
+              [ngModel]="product?.buyPrice"
               required
               min="1"
-              #price="ngModel"
+              #buyPrice="ngModel"
             />
-            <ng-container *ngIf="price.touched && price.errors">
-              <app-error *ngIf="price.errors['required']" [message]="'Price is required'"/>
-              <app-error *ngIf="price.errors['min']" [message]="'Price should be at least $1'"/>
+            <ng-container *ngIf="buyPrice.touched && buyPrice.errors">
+              <app-error *ngIf="buyPrice.errors['required']" [message]="'Price is required'"/>
+              <app-error *ngIf="buyPrice.errors['min']" [message]="'Price should be at least $1'"/>
             </ng-container>
           
           <!-- File Upload Button -->

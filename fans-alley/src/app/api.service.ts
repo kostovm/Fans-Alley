@@ -24,8 +24,14 @@ export class ApiService {
       (error) => console.log(error));
   }
 
-  editProduct(){
-    
+  editProduct(product: Product, productId: string){
+    console.log(product)
+    this.http.put(`${this.apiUrl}/data/products/${productId}`, product).subscribe(
+      (response) => {
+        this.router.navigate([`/products/${productId}/details`])
+      },
+      (error) => console.log(error)
+    );
   }
 
   getProducts(){
