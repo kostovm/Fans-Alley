@@ -13,6 +13,7 @@ import { SharedModule } from "../shared/shared.module";
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
+import { BuyComponent } from './buy/buy.component';
 
 
 
@@ -27,7 +28,8 @@ import { DeleteComponent } from './delete/delete.component';
     OffersComponent,
     ProductItemComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    BuyComponent
   ],
   imports: [
     CommonModule,

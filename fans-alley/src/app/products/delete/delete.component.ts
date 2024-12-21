@@ -20,8 +20,6 @@ export class DeleteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // Getting the product:
-
     this.productId = this.route.snapshot.paramMap.get('id')!;
 
     this.apiService.getSingleProduct(this.productId).subscribe({
@@ -30,13 +28,9 @@ export class DeleteComponent implements OnInit {
 
         if (product) {
 
-          // Getting the imageUrl
-
           if (this.product.imageUrl) {
             this.previewUrl = this.product.imageUrl;
           }
-
-          // Checking if this is the author
 
           this.sharedService.userInfo$.subscribe((user) => {
             const userId = user?._id;

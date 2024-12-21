@@ -8,15 +8,7 @@ import { Product } from 'src/app/types/product';
 })
 export class DetailsComponent{
 
-  @Input() product: Product = {
-    "_ownerId":"",
-    "productName":"",
-    "category":"",
-    "description":"",
-    "buyPrice": 0,
-    "sold": false,
-    "imageUrl":"",
-    "_id":""}
+  @Input() product!: Product
 
   constructor(){}
 

@@ -21,6 +21,6 @@
     <input type="number" class="offer" [(ngModel)]="currentOffer" [min]="userOfferForThisProduct + 1" [max]="product.buyPrice" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
     <section class="make-offer" *ngIf="!product.sold && userService.isLoggedIn() && !isOwner">
         <a (click)="offer()" class="offer-button" [innerHTML]="'Make offer for $' + currentOffer" [ngClass]="{'disabled': currentOffer === product.buyPrice}"></a>
-        <a class="buy-now-button">Buy NOW for ${{product.buyPrice}}</a>
+        <a [routerLink]="'/products/' + product._id + '/buy'" class="buy-now-button">Buy NOW for ${{product.buyPrice}}</a>
     </section>
 </div>

@@ -1,0 +1,8 @@
+<div class="outer">
+    <section class="buy">
+        <img src={{product?.imageUrl}} alt="">
+        <p class="warning">Are you sure you want to buy <span>{{product?.productName}}</span>?</p>
+        <button (click)="buy()" class="confirm">Yes, I want it</button>
+        <button (click)="goBack()" class="deny">No, I have to think a little bit more</button>
+    </section>
+</div>

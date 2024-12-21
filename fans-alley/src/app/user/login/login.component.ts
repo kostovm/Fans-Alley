@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
     }
 
     const {email, password} = form.value;
-    console.log('button works')
-    this.userService.login(email, password)
+    this.userService.login(email, password);
   }
 
 }

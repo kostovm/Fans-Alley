@@ -28,6 +28,7 @@ export class UserService {
       if(response?.accessToken){
         localStorage.setItem('accessToken', response.accessToken);
         this.sharedService.setUserInfo(response);
+        this.router.navigate(['/products'])
       }
     },
     (error) => console.error('Error:', error)
