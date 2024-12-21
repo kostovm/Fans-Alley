@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OffersService } from 'src/app/offers.service';
 import { SharedService } from 'src/app/shared.service';
 import { Product } from 'src/app/types/product';
@@ -9,31 +9,48 @@ import { UserService } from 'src/app/user/user.service';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-export class ProductItemComponent implements OnInit{
-  
-@Input() product: Product | null = null
+export class ProductItemComponent implements OnInit {
+
+  @Input() product: Product | null = null;
 
   isOwner: boolean = false;
-  offersCount: number = 0
+  hasBestOffer: boolean = false;
+  offersCount: number = 0;
+  userOfferForThisProduct: number = 0;
+  userId: string | null = null;
 
-  constructor(public userService: UserService, private sharedService: SharedService, private offersService: OffersService){}
+  constructor(
+    public userService: UserService, 
+    private sharedService: SharedService, 
+    private offersService: OffersService
+  ) {}
 
   ngOnInit(): void {
-    let userId: string | undefined = undefined;
 
     this.sharedService.userInfo$.subscribe((user) => {
-      userId = user?._id
-    })
+      if (user) {
+        this.userId = user._id;
 
-    if(this.userService.isLoggedIn() && userId === this.product!._ownerId){
-      this.isOwner = true;
-    }
+        if (this.userService.isLoggedIn() && this.userId === this.product?._ownerId) {
+          this.isOwner = true;
+        }
 
-    if(this.product?._id){
-      this.offersService.getOffersCount(this.product._id).subscribe(
-        (response) => this.offersCount = response
-      )
-    }
+        if (this.product?._id && this.userId) {
+
+          this.offersService.getOffersCount(this.product._id).subscribe(
+            (response) => this.offersCount = response
+          );
+
+          this.offersService.getUsersOffer(this.product._id, this.userId).subscribe(
+            (offer) => this.userOfferForThisProduct = offer || 0
+          );
+
+          this.offersService.isUserWithBestOffer(this.product._id, this.userId).subscribe(
+            (response) => this.hasBestOffer = response
+          )
+
+        }
+      }
+    });
   }
-
 }

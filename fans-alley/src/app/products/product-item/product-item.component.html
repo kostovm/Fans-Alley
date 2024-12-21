@@ -12,9 +12,9 @@
         <p *ngIf="product.sold">SOLD</p>
         <img src={{product.imageUrl}} alt="" class="hover-image">
     </div>
-    <section class="isEnough" *ngIf="!isOwner && userService.isLoggedIn()">
-        <p class="not-enough">Someone has offered more than $3</p>
-        <p class="enough">You have the best offer!</p>
+    <section class="isEnough" *ngIf="!isOwner && userService.isLoggedIn() && !product.sold && userOfferForThisProduct > 0">
+        <p class="not-enough" *ngIf="!hasBestOffer">${{userOfferForThisProduct}} is not the best offer</p>
+        <p class="enough" *ngIf="hasBestOffer">You have the best offer!</p>
     </section>
     <a [routerLink]="'/products/' + product._id + '/details'" class="more-info" *ngIf="!isOwner">More info about the product and the artist</a>
     <a [routerLink]="'/products/' + product._id + '/details'" class="more-info" *ngIf="isOwner">See OFFERS, EDIT or DELETE your product</a>
