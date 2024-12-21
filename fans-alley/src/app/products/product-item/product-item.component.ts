@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OffersService } from 'src/app/offers.service';
 import { SharedService } from 'src/app/shared.service';
 import { Product } from 'src/app/types/product';
@@ -12,6 +12,7 @@ import { UserService } from 'src/app/user/user.service';
 export class ProductItemComponent implements OnInit {
 
   @Input() product: Product | null = null;
+  @Output() offerAdded: EventEmitter<void> = new EventEmitter<void>();
 
   isOwner: boolean = false;
   hasBestOffer: boolean = false;
@@ -24,7 +25,8 @@ export class ProductItemComponent implements OnInit {
   constructor(
     public userService: UserService, 
     private sharedService: SharedService, 
-    private offersService: OffersService
+    private offersService: OffersService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +62,8 @@ export class ProductItemComponent implements OnInit {
     });
   }
 
-  offer(){
-    this.offersService.addOffer(this.currentOffer, this.userId!, this.product!._id, this.username)
+  offer(): void{
+    this.offersService.addOffer(this.currentOffer, this.userId!, this.product!._id, this.username);
+    this.offerAdded.emit()
   }
 }

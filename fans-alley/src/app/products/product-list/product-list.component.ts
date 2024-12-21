@@ -6,17 +6,23 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
 
   allProducts: any = [];
 
-  constructor(private api: ApiService){}
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.api.getProducts().subscribe((products)=> {
-      this.allProducts = products;
-    })
-    
+    this.loadProducts();
   }
 
+  loadProducts(): void {
+    this.api.getProducts().subscribe((products) => {
+      this.allProducts = products;
+    });
+  }
+
+  onOfferAdded(): void {
+    this.loadProducts();
+  }
 }

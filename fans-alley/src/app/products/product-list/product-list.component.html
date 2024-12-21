@@ -1,5 +1,8 @@
 <section class="container products">
 <div *ngFor="let product of allProducts">
-    <app-product-item [product]="product"/>
+    <app-product-item 
+    [product]="product"
+    (offerAdded)="onOfferAdded()"
+    />
 </div>
 </section>

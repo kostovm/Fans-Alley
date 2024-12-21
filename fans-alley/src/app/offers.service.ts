@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Offer, Offers } from './types/offers';
+import { Offers } from './types/offers';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class OffersService {
         };
   
         this.http.put(url, allOffers).subscribe(
-          () => console.log('Offer updated or created successfully.'),
+          () => {},
           (error) => console.error('Error updating or creating offer:', error)
         );
       },
