@@ -34,9 +34,18 @@ export class SharedService {
 
   setUserInfo(user: UserForAuth): void {
     this.userInfo.next(user);
+    localStorage.setItem('userInfo', JSON.stringify(user));
   }
 
   clearUserInfo(): void {
     this.userInfo.next(null);
+    localStorage.removeItem('userInfo');
+  }
+
+  restoreUserInfo(): void {
+    const userInfo = localStorage.getItem('userInfo');
+    if (userInfo) {
+      this.userInfo.next(JSON.parse(userInfo));
+    }
   }
 }

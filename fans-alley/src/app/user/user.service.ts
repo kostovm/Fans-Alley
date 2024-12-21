@@ -4,6 +4,7 @@ import { UserForAuth, UserInfo } from '../types/user';
 import { environment } from 'src/environments/environment.development';
 import { SharedService } from '../shared.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private sharedService: SharedService, private router: Router){}
+  constructor(private http: HttpClient, private sharedService: SharedService, private router: Router, private snackBar: MatSnackBar){}
 
   isLoggedIn(): boolean{
     return !!localStorage.getItem('accessToken');
@@ -44,7 +45,19 @@ export class UserService {
         this.login(email, password);
         this.router.navigate(['/products']);
       },
-      (error) => console.log(error)
+      (error) => {
+        if (error.status === 409) {
+          this.snackBar.open('A user with the same email already exists. Please use a different email.', 'Close', {
+            duration: 5000, 
+            panelClass: ['error-snackbar'],
+          });
+        } else {
+          this.snackBar.open('An unexpected error occurred. Please try again later.', 'Close', {
+            duration: 5000,
+            panelClass: ['error-snackbar'],
+          });
+        }
+      }
     )
   }
 

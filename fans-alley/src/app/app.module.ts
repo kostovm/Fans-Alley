@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
 import { AuthInterceptor } from './auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import { AuthInterceptor } from './auth.interceptor';
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatSnackBarModule,
     CoreModule,
     UserModule,
     ProductsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

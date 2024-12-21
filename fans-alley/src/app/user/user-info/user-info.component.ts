@@ -17,7 +17,6 @@ ngOnInit(): void {
   this.sharedService.userInfo$.subscribe((userInfo) => {
     this.user = userInfo;
   });
-  console.log('User info component', this.user);
 }
 
 }
