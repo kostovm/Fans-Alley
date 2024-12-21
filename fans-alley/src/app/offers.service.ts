@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Offers } from './types/offers';
+import { Offer, Offers } from './types/offers';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,31 @@ export class OffersService {
   apiUrl:string = environment.apiUrl
 
   constructor(private http: HttpClient) { }
+
+  addOffer(currentOffer: number, userId: string, productId: string, username: string): void {
+    const url = `${this.apiUrl}/jsonstore/offers`;
+  
+    this.http.get<{ [productId: string]: { [userId: string]: { username: string; offer: number } } } | null>(url).subscribe(
+      (response) => {
+        const allOffers = response || {};
+  
+        if (!allOffers[productId]) {
+          allOffers[productId] = {};
+        }
+  
+        allOffers[productId][userId] = {
+          username: username,
+          offer: currentOffer,
+        };
+  
+        this.http.put(url, allOffers).subscribe(
+          () => console.log('Offer updated or created successfully.'),
+          (error) => console.error('Error updating or creating offer:', error)
+        );
+      },
+      (error) => console.error('Error fetching offers:', error)
+    );
+  }
 
   getOffersForProduct(productId: string){
     return this.http.get<Offers>(`${this.apiUrl}/jsonstore/offers/${productId}`)
@@ -76,7 +101,6 @@ export class OffersService {
             return false;
           }
         }
-
         return false;
       })
     );

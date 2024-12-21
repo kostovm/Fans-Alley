@@ -18,6 +18,7 @@ export class ProductItemComponent implements OnInit {
   offersCount: number = 0;
   userOfferForThisProduct: number = 0;
   userId: string | null = null;
+  username: string = '';
   currentOffer: number = 0;
 
   constructor(
@@ -31,6 +32,7 @@ export class ProductItemComponent implements OnInit {
     this.sharedService.userInfo$.subscribe((user) => {
       if (user) {
         this.userId = user._id;
+        this.username = user.username;
 
         if (this.userService.isLoggedIn() && this.userId === this.product?._ownerId) {
           this.isOwner = true;
@@ -56,5 +58,9 @@ export class ProductItemComponent implements OnInit {
         }
       }
     });
+  }
+
+  offer(){
+    this.offersService.addOffer(this.currentOffer, this.userId!, this.product!._id, this.username)
   }
 }

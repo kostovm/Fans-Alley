@@ -109,10 +109,16 @@ section.make-offer{
     transition: background-color 0.3s;
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .card a.offer-button:hover {
     background-color: #025aa5;
+}
+
+.card a.offer-button.disabled {
+        pointer-events: none;
+        opacity: 0.5;
 }
 
 .card a.buy-now-button {
