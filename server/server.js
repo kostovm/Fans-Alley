@@ -1394,6 +1394,16 @@
                 description: "Because Severus Snape is not made of stone (he is made of wood)",
                 imageUrl: "https://i.pinimg.com/736x/8b/44/c1/8b44c1d6b6286e1b60a6b07e6163847a.jpg",
                 _id: "17beaa9c-235a-4905-bb9a-188cccd3f75d"
+            },
+            "41bd004e-cfed-4169-9cb8-a6e7d6045284": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                productName: "Harry's trunk necklace",
+                category: "Jewelry and Decorations",
+                buyPrice: 150,
+                sold: false,
+                description: "Never forget your trunk to Hogwarts",
+                imageUrl: "https://www.curiosasociety.com/cdn/shop/products/TrunkNecklace3.jpg?v=1633623851",
+                _id: "41bd004e-cfed-4169-9cb8-a6e7d6045284"
             }
         }
     };

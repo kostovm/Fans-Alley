@@ -18,6 +18,7 @@ export class ProductItemComponent implements OnInit {
   offersCount: number = 0;
   userOfferForThisProduct: number = 0;
   userId: string | null = null;
+  currentOffer: number = 0;
 
   constructor(
     public userService: UserService, 
@@ -42,7 +43,10 @@ export class ProductItemComponent implements OnInit {
           );
 
           this.offersService.getUsersOffer(this.product._id, this.userId).subscribe(
-            (offer) => this.userOfferForThisProduct = offer || 0
+            (offer) => {
+              this.userOfferForThisProduct = offer || 0;
+              this.currentOffer = this.userOfferForThisProduct + 1;
+            }
           );
 
           this.offersService.isUserWithBestOffer(this.product._id, this.userId).subscribe(
