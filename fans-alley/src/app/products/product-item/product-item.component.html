@@ -1,7 +1,7 @@
-<div class="card">
+<div class="card" *ngIf="product">
     <section class="offer-section" *ngIf="!product.sold && isOwner">
-        <p class="not-enough">There are <span class="number-offers">0</span> offers for this product</p>
-        <p class="enough">There are <span class="number-offers">3</span> offers for this product</p>
+        <p class="not-enough" *ngIf="!offersCount">There are <span class="number-offers">0</span> offers for this product</p>
+        <p class="enough" *ngIf="offersCount">There are <span class="number-offers">{{offersCount}}</span> offers for this product</p>
     </section>
     <section class="product-info">
         <div class="card-top-border"></div>
