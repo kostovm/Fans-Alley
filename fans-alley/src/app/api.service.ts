@@ -25,7 +25,6 @@ export class ApiService {
   }
 
   editProduct(product: Product, productId: string){
-    console.log(product)
     this.http.put(`${this.apiUrl}/data/products/${productId}`, product).subscribe(
       (response) => {
         this.router.navigate([`/products/${productId}/details`])

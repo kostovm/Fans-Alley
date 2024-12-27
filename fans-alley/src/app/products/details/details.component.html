@@ -1,13 +1,13 @@
 <section class="product-info-page container">
     <div class="price-tag">${{product.buyPrice}}</div>
     <img src={{product.imageUrl}} alt="">
-        <input type="number" class="offer" value="4">
-    <section class="make-offer-on-page">
+        <input type="number" class="offer" value="4" *ngIf="!isOwner && isLoggedIn">
+    <section class="make-offer-on-page" *ngIf="!isOwner && isLoggedIn">
         <a href="#" class="offer-button-on-page">Make offer for $4</a>
         <a href="#" class="buy-now-button-on-page">Buy NOW for ${{product.buyPrice}}</a>
     </section>
     <a href="#" class="more-from-this-artist-button">More from this atrist</a>
     <p class="product-description">{{product.description}}</p>
-    <a [routerLink]="'/products/' + product._id + '/edit'" class="edit-button">Edit</a>
-    <a [routerLink]="'/products/' + product._id + '/delete'" class="remove-button">Delete</a>
+    <a [routerLink]="'/products/' + product._id + '/edit'" class="edit-button" *ngIf="isOwner">Edit</a>
+    <a [routerLink]="'/products/' + product._id + '/delete'" class="remove-button" *ngIf="isOwner">Delete</a>
 </section>
