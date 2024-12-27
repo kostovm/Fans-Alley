@@ -59,6 +59,7 @@ cursor: default;
 
 .offer-button-on-page {
     background-color: #0275d8;
+    cursor: pointer;
 }
 
 .buy-now-button-on-page {
@@ -67,6 +68,10 @@ cursor: default;
 
 .offer-button-on-page:hover {
     background-color: #025aa5;
+}
+
+.offer-button-on-page.disabled{
+    background-color: gray;
 }
 
 .buy-now-button-on-page:hover {

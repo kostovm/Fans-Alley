@@ -26,7 +26,6 @@ export class ProductItemComponent implements OnInit {
     public userService: UserService, 
     private sharedService: SharedService, 
     private offersService: OffersService,
-    private changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
