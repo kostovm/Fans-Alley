@@ -62,6 +62,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   offer(): void{
+    console.log('offer button clicked!')
     this.offersService.addOffer(this.currentOffer, this.userId!, this.product!._id, this.username);
     this.offerAdded.emit()
   }

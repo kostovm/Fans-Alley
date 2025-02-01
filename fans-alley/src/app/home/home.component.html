@@ -6,15 +6,18 @@
         <section class="top">
             <div class="tips">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nobis voluptates mollitia laborum nostrum non cupiditate quia iure magnam numquam! Ab hic placeat tenetur voluptate vel aspernatur esse? Maxime, tenetur.</p>
+                <button (click)="showMore()">SHOW MORE</button>
             </div>
         </section>
-        <section class="next show">
-            <section class="pairs">
+        <section class="next" [class.show]="isVisible">
+            <section class="pairs" [class.show]="isVisible">
                 <div class="pair">
                     <div class="tips">
+                        <h2>How to buy</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cumque nemo nisi cum dolorem quaerat eaque! Maiores similique at dolorem quis tenetur minus officia sit nemo, voluptate, eaque praesentium! Magni.</p>
                     </div>
                     <div class="tips">
+                        <h2>How to sell</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                 </div>

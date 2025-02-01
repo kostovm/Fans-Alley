@@ -29,9 +29,13 @@
 }
 
 .pairs {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 150px;
+}
+
+.pairs.show {
+    display: flex;
 }
 
 .pair {
@@ -48,4 +52,8 @@
     border: 3px solid cyan;
     transition: transform ease-in 0.3s;
     color: cyan;
+}
+
+button {
+    border: 2px solid red;
 }
