@@ -8,9 +8,11 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   isVisible = false;
+  isHidden = false;
 
   showMore(){
     this.isVisible = true;
+    this.isHidden = true;
   }
 
 }
